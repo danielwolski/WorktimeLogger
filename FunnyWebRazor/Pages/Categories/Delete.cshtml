@@ -1,0 +1,30 @@
+﻿@page
+@model FunnyWebRazor.Pages.Categories.DeleteModel
+@{
+}
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Usuwanie kategorii</h2>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.Name">Nazwa kategorii</label>
+            <input asp-for="Category.Name" type="text" class="form-control" disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.DisplayOrder">Kolejność wyświetlania</label>
+            <input asp-for="Category.DisplayOrder" type="text" class="form-control" disabled />
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary form-control">Usuń</button>
+            </div>
+            <div class="col-6">
+                <a asp-page="/categories/index" class="btn btn-secondary form-control">Powrót do listy</a>
+            </div>
+        </div>
+
+
+    </div>
+</form>
