@@ -17,57 +17,55 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FunnyWebRazor
 build_property.RootNamespace = FunnyWebRazor
-build_property.ProjectDir = D:\source\Fun\FunnyWebRazor\
+build_property.ProjectDir = C:\Users\Daniel\Desktop\dotnet\Dotnet-WIP\FunnyWebRazor\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\source\Fun\FunnyWebRazor
+build_property.MSBuildProjectDirectory = C:\Users\Daniel\Desktop\dotnet\Dotnet-WIP\FunnyWebRazor
 build_property._RazorSourceGeneratorDebug = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/Categories/Create.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/Categories/Delete.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/Categories/Edit.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/Categories/Index.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/Error.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/Index.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/Privacy.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/_ViewImports.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/_ViewStart.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source/Fun/FunnyWebRazor/Pages/Shared/_Layout.cshtml]
+[C:/Users/Daniel/Desktop/dotnet/Dotnet-WIP/FunnyWebRazor/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-0k28digq9t
