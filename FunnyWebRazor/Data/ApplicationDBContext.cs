@@ -39,7 +39,7 @@ namespace FunnyWebRazor.Data
                    Id = 1,
                    FullName = "John Smith",
                    Email = "john.smith@example.com",
-                   PasswordHash = "cGFzcw==",
+                   Password = "pass",
                    Role = "Employer",
                    TeamId = 1
                },
@@ -48,7 +48,7 @@ namespace FunnyWebRazor.Data
                    Id = 2,
                    FullName = "Jane Doe",
                    Email = "jane.doe@example.com",
-                   PasswordHash = "cGFzcw==",
+                   Password = "pass",
                    Role = "Employee",
                    TeamId = 2
                },
@@ -57,7 +57,7 @@ namespace FunnyWebRazor.Data
                    Id = 3,
                    FullName = "Alice Johnson",
                    Email = "alice.johnson@example.com",
-                   PasswordHash = "cGFzcw==",
+                   Password = "pass",
                    Role = "Employee",
                    TeamId = 3
                }

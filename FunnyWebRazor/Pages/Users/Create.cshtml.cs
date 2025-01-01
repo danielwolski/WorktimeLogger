@@ -2,6 +2,8 @@ using FunnyWebRazor.Data;
 using FunnyWebRazor.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace FunnyWebRazor.Pages.Users
 {
@@ -15,7 +17,8 @@ namespace FunnyWebRazor.Pages.Users
         }
 
         [BindProperty]
-        public User User { get; set; }
+        public User User { get; set; }  
+
 
         public IActionResult OnGet()
         {
