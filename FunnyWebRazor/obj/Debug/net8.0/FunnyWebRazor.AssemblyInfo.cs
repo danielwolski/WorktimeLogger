@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FunnyWebRazor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d157a2d6b815b1fbae1e887cff796b6b2d679ce0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2aaa5e4fdde5cdadbf7f1d804cc3ba6cbebb0c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("FunnyWebRazor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FunnyWebRazor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

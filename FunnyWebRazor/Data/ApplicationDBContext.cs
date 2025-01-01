@@ -1,5 +1,4 @@
 ﻿using FunnyWebRazor.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace FunnyWebRazor.Data
@@ -10,18 +9,83 @@ namespace FunnyWebRazor.Data
         {
         }
 
-        // DbSet tylko dla Team
+        public DbSet<User> Users { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<WorkLog> WorkLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Dane początkowe dla Team
             modelBuilder.Entity<Team>().HasData(
-                new Team { Id = 1, Name = "Development Team" },
-                new Team { Id = 2, Name = "Marketing Team" }
+                new Team 
+                { 
+                    Id = 1, 
+                    Name = "Development" 
+                },
+                new Team 
+                { 
+                    Id = 2, 
+                    Name = "Marketing" 
+                },
+                new Team 
+                { 
+                    Id = 3,
+                    Name = "HR" 
+                }
             );
 
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<User>().HasData(
+               new User
+               {
+                   Id = 1,
+                   FullName = "John Smith",
+                   Email = "john.smith@example.com",
+                   PasswordHash = "cGFzcw==",
+                   Role = "Employer",
+                   TeamId = 1
+               },
+               new User
+               {
+                   Id = 2,
+                   FullName = "Jane Doe",
+                   Email = "jane.doe@example.com",
+                   PasswordHash = "cGFzcw==",
+                   Role = "Employee",
+                   TeamId = 2
+               },
+               new User
+               {
+                   Id = 3,
+                   FullName = "Alice Johnson",
+                   Email = "alice.johnson@example.com",
+                   PasswordHash = "cGFzcw==",
+                   Role = "Employee",
+                   TeamId = 3
+               }
+            );
+
+
+            modelBuilder.Entity<WorkLog>().HasData(
+                new WorkLog
+                {
+                    Id = 1,
+                    UserId = 2,
+                    TaskName = "Develop login page UI",
+                    Description = "Designed and implemented login page",
+                    StartTime = new DateTime(2024, 1, 1, 9, 0, 0),
+                    EndTime = new DateTime(2024, 1, 1, 17, 0, 0),
+                    LogDate = new DateTime(2024, 1, 1)
+                },
+                new WorkLog
+                {
+                    Id = 2,
+                    UserId = 3,
+                    TaskName = "Prepare marketing plan",
+                    Description = "Worked on the Q1 marketing strategy",
+                    StartTime = new DateTime(2024, 1, 2, 10, 0, 0),
+                    EndTime = new DateTime(2024, 1, 2, 15, 0, 0),
+                    LogDate = new DateTime(2024, 1, 2)
+                }
+            );
         }
     }
 }

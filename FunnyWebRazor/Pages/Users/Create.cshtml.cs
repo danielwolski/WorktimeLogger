@@ -22,16 +22,16 @@ namespace FunnyWebRazor.Pages.Users
             return Page();
         }
 
-        //public async Task<IActionResult> OnPostAsync()
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return Page();
-        //    }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
 
-        //    _context.Users.Add(User);
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToPage("./Index");
-        //}
+            _context.Users.Add(User);
+            await _context.SaveChangesAsync();
+            return RedirectToPage("./Index");
+        }
     }
 }
