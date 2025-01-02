@@ -1,0 +1,31 @@
+﻿@page
+@model FunnyWebRazor.Pages.Worklogs.IndexModel
+@{
+    ViewData["Title"] = "Worklogs";
+}
+
+<h1>Worklogs</h1>
+
+<table class="table">
+     <thead>
+         <tr>
+             <th>User full name</th>
+             <th>Task</th>
+             <th>Description</th>
+             <th>Start</th>
+             <th>End</th>
+         </tr>
+     </thead>
+     <tbody>
+         @foreach (var worklog in Model.Worklogs)
+         {
+             <tr>
+                 <td>@worklog.User.FullName</td>
+                 <td>@worklog.TaskName</td>
+                 <td>@worklog.Description</td>
+                 <td>@worklog.StartTime</td>
+                 <td>@worklog.EndTime</td>
+             </tr>
+         }
+     </tbody>
+</table>

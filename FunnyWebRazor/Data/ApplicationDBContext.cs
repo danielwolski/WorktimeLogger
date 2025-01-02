@@ -11,7 +11,7 @@ namespace FunnyWebRazor.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Team> Teams { get; set; }
-        public DbSet<WorkLog> WorkLogs { get; set; }
+        public DbSet<Worklog> Worklogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -61,8 +61,8 @@ namespace FunnyWebRazor.Data
             );
 
 
-            modelBuilder.Entity<WorkLog>().HasData(
-                new WorkLog
+            modelBuilder.Entity<Worklog>().HasData(
+                new Worklog
                 {
                     Id = 1,
                     UserId = 2,
@@ -71,7 +71,7 @@ namespace FunnyWebRazor.Data
                     StartTime = new DateTime(2024, 1, 1, 9, 0, 0),
                     EndTime = new DateTime(2024, 1, 1, 17, 0, 0)
                 },
-                new WorkLog
+                new Worklog
                 {
                     Id = 2,
                     UserId = 3,
