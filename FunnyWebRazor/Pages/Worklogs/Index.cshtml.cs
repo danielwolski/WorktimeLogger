@@ -24,14 +24,13 @@ namespace FunnyWebRazor.Pages.Worklogs
             SortOrder = sortOrder;
             SearchString = searchString;
 
-            var worklogsQuery = _context.Worklogs
-                .Include(w => w.User)
-                .AsQueryable();
+            var worklogsQuery = _context.Worklogs.Include(w => w.User).AsQueryable();
 
-            if (!string.IsNullOrEmpty(SearchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
-                worklogsQuery = worklogsQuery.Where(w => w.User.FullName.Contains(SearchString) ||
-                                                         w.TaskName.Contains(SearchString));
+                worklogsQuery = worklogsQuery.Where(w => w.User.FullName.Contains(searchString)
+                                                       || w.TaskName.Contains(searchString)
+                                                       || w.Description.Contains(searchString));
             }
 
             worklogsQuery = sortOrder switch
@@ -46,7 +45,7 @@ namespace FunnyWebRazor.Pages.Worklogs
                 "start_asc" => worklogsQuery.OrderBy(w => w.StartTime),
                 "end_desc" => worklogsQuery.OrderByDescending(w => w.EndTime),
                 "end_asc" => worklogsQuery.OrderBy(w => w.EndTime),
-                _ => worklogsQuery.OrderBy(w => w.User.FullName) // Domyœlne sortowanie
+                _ => worklogsQuery.OrderBy(w => w.User.FullName)
             };
 
             Worklogs = await worklogsQuery.ToListAsync();

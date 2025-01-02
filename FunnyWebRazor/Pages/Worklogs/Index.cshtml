@@ -17,27 +17,32 @@
     <thead>
         <tr>
             <th>
-                <a asp-route-sortOrder="@(Model.SortOrder == "name_asc" ? "name_desc" : "name_asc")">
+                <a asp-route-sortOrder="@(Model.SortOrder == "name_asc" ? "name_desc" : "name_asc")"
+                   asp-route-searchString="@Model.SearchString">
                     User Full Name
                 </a>
             </th>
             <th>
-                <a asp-route-sortOrder="@(Model.SortOrder == "task_asc" ? "task_desc" : "task_asc")">
+                <a asp-route-sortOrder="@(Model.SortOrder == "task_asc" ? "task_desc" : "task_asc")"
+                   asp-route-searchString="@Model.SearchString">
                     Task
                 </a>
             </th>
             <th>
-                <a asp-route-sortOrder="@(Model.SortOrder == "description_asc" ? "description_desc" : "description_asc")">
+                <a asp-route-sortOrder="@(Model.SortOrder == "description_asc" ? "description_desc" : "description_asc")"
+                   asp-route-searchString="@Model.SearchString">
                     Description
                 </a>
             </th>
             <th>
-                <a asp-route-sortOrder="@(Model.SortOrder == "start_asc" ? "start_desc" : "start_asc")">
+                <a asp-route-sortOrder="@(Model.SortOrder == "start_asc" ? "start_desc" : "start_asc")"
+                   asp-route-searchString="@Model.SearchString">
                     Start Time
                 </a>
             </th>
             <th>
-                <a asp-route-sortOrder="@(Model.SortOrder == "end_asc" ? "end_desc" : "end_asc")">
+                <a asp-route-sortOrder="@(Model.SortOrder == "end_asc" ? "end_desc" : "end_asc")"
+                   asp-route-searchString="@Model.SearchString">
                     End Time
                 </a>
             </th>
