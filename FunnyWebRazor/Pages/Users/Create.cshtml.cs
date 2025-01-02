@@ -2,39 +2,35 @@ using FunnyWebRazor.Data;
 using FunnyWebRazor.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace FunnyWebRazor.Pages.Users
 {
+    [BindProperties]
     public class CreateModel : PageModel
     {
-        private readonly ApplicationDBContext _context;
+        private readonly ApplicationDBContext _db;
+        public User User { get; set; }
 
-        public CreateModel(ApplicationDBContext context)
+        public CreateModel(ApplicationDBContext db)
         {
-            _context = context;
+            _db = db;
+        }
+        public void OnGet()
+        {
         }
 
-        [BindProperty]
-        public User User { get; set; }  
-
-
-        public IActionResult OnGet()
+        public IActionResult OnPost(User user)
         {
-            return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
+            {
+                _db.Users.Add(user);
+                _db.SaveChanges();
+                return RedirectToPage("Index");
+            }
+            else
             {
                 return Page();
             }
-
-            _context.Users.Add(User);
-            await _context.SaveChangesAsync();
-            return RedirectToPage("./Index");
         }
     }
 }

@@ -1,1 +1,51 @@
-﻿
+﻿@page
+@model FunnyWebRazor.Pages.Users.CreateModel
+@{
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Add New User</h2>
+        </div>
+
+        <div asp-validation-summary="All"></div>
+
+        <div class="mb-3">
+            <label asp-for="User.FullName">Full Name</label>
+            <input asp-for="User.FullName" type="text" class="form-control" />
+            <span asp-validation-for="User.FullName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="User.Email">Email</label>
+            <input asp-for="User.Email" type="email" class="form-control" />
+            <span asp-validation-for="User.Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="User.Password">Password</label>
+            <input asp-for="User.Password" type="password" class="form-control" />
+            <span asp-validation-for="User.Password" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="User.Role">Role</label>
+            <select asp-for="User.Role" class="form-control">
+                <option value="">-- Select Role --</option>
+                <option value="Employer">Employer</option>
+                <option value="Employee">Employee</option>
+            </select>
+            <span asp-validation-for="User.Role" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary form-control">Create</button>
+            </div>
+            <div class="col-6">
+                <a asp-page="/categories/index" class="btn btn-secondary form-control">Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>

@@ -40,8 +40,7 @@ namespace FunnyWebRazor.Data
                    FullName = "John Smith",
                    Email = "john.smith@example.com",
                    Password = "pass",
-                   Role = "Employer",
-                   TeamId = 1
+                   Role = "Employer"
                },
                new User
                {
@@ -49,8 +48,7 @@ namespace FunnyWebRazor.Data
                    FullName = "Jane Doe",
                    Email = "jane.doe@example.com",
                    Password = "pass",
-                   Role = "Employee",
-                   TeamId = 2
+                   Role = "Employee"
                },
                new User
                {
@@ -58,8 +56,7 @@ namespace FunnyWebRazor.Data
                    FullName = "Alice Johnson",
                    Email = "alice.johnson@example.com",
                    Password = "pass",
-                   Role = "Employee",
-                   TeamId = 3
+                   Role = "Employee"
                }
             );
 
@@ -72,8 +69,7 @@ namespace FunnyWebRazor.Data
                     TaskName = "Develop login page UI",
                     Description = "Designed and implemented login page",
                     StartTime = new DateTime(2024, 1, 1, 9, 0, 0),
-                    EndTime = new DateTime(2024, 1, 1, 17, 0, 0),
-                    LogDate = new DateTime(2024, 1, 1)
+                    EndTime = new DateTime(2024, 1, 1, 17, 0, 0)
                 },
                 new WorkLog
                 {
@@ -82,8 +78,7 @@ namespace FunnyWebRazor.Data
                     TaskName = "Prepare marketing plan",
                     Description = "Worked on the Q1 marketing strategy",
                     StartTime = new DateTime(2024, 1, 2, 10, 0, 0),
-                    EndTime = new DateTime(2024, 1, 2, 15, 0, 0),
-                    LogDate = new DateTime(2024, 1, 2)
+                    EndTime = new DateTime(2024, 1, 2, 15, 0, 0)
                 }
             );
         }
