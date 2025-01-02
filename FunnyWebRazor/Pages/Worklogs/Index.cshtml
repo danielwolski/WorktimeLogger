@@ -6,26 +6,53 @@
 
 <h1>Worklogs</h1>
 
+<form method="get">
+    <div class="form-group">
+        <input type="text" name="searchString" value="@Model.SearchString" placeholder="Search worklogs..." class="form-control" />
+        <button type="submit" class="btn btn-primary mt-2">Search</button>
+    </div>
+</form>
+
 <table class="table">
-     <thead>
-         <tr>
-             <th>User full name</th>
-             <th>Task</th>
-             <th>Description</th>
-             <th>Start</th>
-             <th>End</th>
-         </tr>
-     </thead>
-     <tbody>
-         @foreach (var worklog in Model.Worklogs)
-         {
-             <tr>
-                 <td>@worklog.User.FullName</td>
-                 <td>@worklog.TaskName</td>
-                 <td>@worklog.Description</td>
-                 <td>@worklog.StartTime</td>
-                 <td>@worklog.EndTime</td>
-             </tr>
-         }
-     </tbody>
+    <thead>
+        <tr>
+            <th>
+                <a asp-route-sortOrder="@(Model.SortOrder == "name_asc" ? "name_desc" : "name_asc")">
+                    User Full Name
+                </a>
+            </th>
+            <th>
+                <a asp-route-sortOrder="@(Model.SortOrder == "task_asc" ? "task_desc" : "task_asc")">
+                    Task
+                </a>
+            </th>
+            <th>
+                <a asp-route-sortOrder="@(Model.SortOrder == "description_asc" ? "description_desc" : "description_asc")">
+                    Description
+                </a>
+            </th>
+            <th>
+                <a asp-route-sortOrder="@(Model.SortOrder == "start_asc" ? "start_desc" : "start_asc")">
+                    Start Time
+                </a>
+            </th>
+            <th>
+                <a asp-route-sortOrder="@(Model.SortOrder == "end_asc" ? "end_desc" : "end_asc")">
+                    End Time
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var worklog in Model.Worklogs)
+        {
+            <tr>
+                <td>@worklog.User.FullName</td>
+                <td>@worklog.TaskName</td>
+                <td>@worklog.Description</td>
+                <td>@worklog.StartTime</td>
+                <td>@worklog.EndTime</td>
+            </tr>
+        }
+    </tbody>
 </table>
