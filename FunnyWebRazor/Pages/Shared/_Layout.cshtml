@@ -28,11 +28,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/worklogs/index">Worklogs</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/logwork/index">Log Work</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>Welcome, @User.Identity.Name!</p>
+        <a asp-page="/Account/Logout">Logout</a>
+    }
+    else
+    {
+        <a asp-page="/Account/Login">Login</a>
+    }
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

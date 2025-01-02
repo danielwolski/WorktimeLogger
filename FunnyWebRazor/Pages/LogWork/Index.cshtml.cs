@@ -4,17 +4,17 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace FunnyWebRazor.Pages.Worklogs
+namespace FunnyWebRazor.Pages.LogWork
 {
-    [Authorize(Roles = "Admin")]
-    public class IndexModel : PageModel
+    [Authorize(Roles = "User")]
+    public class IndexModelLogWork : PageModel
     {
         private readonly ApplicationDBContext _context;
 
         public string SortOrder { get; set; }
         public string SearchString { get; set; }
 
-        public IndexModel(ApplicationDBContext context)
+        public IndexModelLogWork(ApplicationDBContext context)
         {
             _context = context;
         }

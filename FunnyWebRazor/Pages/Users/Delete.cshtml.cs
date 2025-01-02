@@ -1,5 +1,6 @@
 using FunnyWebRazor.Data;
 using FunnyWebRazor.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -7,19 +8,19 @@ namespace FunnyWebRazor.Pages.Users
 {
     public class DeleteModel : PageModel
     {
-        private readonly ApplicationDBContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public DeleteModel(ApplicationDBContext context)
+        public DeleteModel(UserManager<User> userManager)
         {
-            _context = context;
+            _userManager = userManager;
         }
 
         [BindProperty]
         public User User { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public async Task<IActionResult> OnGetAsync(string id) 
         {
-            User = await _context.Users.FindAsync(id);
+            User = await _userManager.FindByIdAsync(id);
 
             if (User == null)
             {
@@ -29,19 +30,28 @@ namespace FunnyWebRazor.Pages.Users
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int id)
+        public async Task<IActionResult> OnPostAsync(string id)
         {
-            var userToDelete = await _context.Users.FindAsync(id);
+            var userToDelete = await _userManager.FindByIdAsync(id);
 
             if (userToDelete == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(userToDelete);
-            await _context.SaveChangesAsync();
+            var result = await _userManager.DeleteAsync(userToDelete);
 
-            return RedirectToPage("./Index");
+            if (result.Succeeded)
+            {
+                return RedirectToPage("./Index");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
+            return Page();
         }
     }
 }

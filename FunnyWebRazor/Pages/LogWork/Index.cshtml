@@ -1,0 +1,68 @@
+﻿@page
+@model FunnyWebRazor.Pages.LogWork.IndexModelLogWork
+@{
+    ViewData["Title"] = "LogWork";
+}
+
+<h1>Your worklogs</h1>
+
+
+<div class="d-flex justify-content-between align-items-center">
+    <form method="get" class="d-inline-flex">
+        <div class="form-group">
+            <input type="text" name="searchString" value="@Model.SearchString" placeholder="Search worklogs..." class="form-control" />
+            <button type="submit" class="btn btn-primary mt-2">Search</button>
+        </div>
+    </form>
+
+    <a asp-page="/LogWork/Create" class="btn btn-success ml-3">Add Worklog</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-route-sortOrder="@(Model.SortOrder == "name_asc" ? "name_desc" : "name_asc")"
+                   asp-route-searchString="@Model.SearchString">
+                    User Full Name
+                </a>
+            </th>
+            <th>
+                <a asp-route-sortOrder="@(Model.SortOrder == "task_asc" ? "task_desc" : "task_asc")"
+                   asp-route-searchString="@Model.SearchString">
+                    Task
+                </a>
+            </th>
+            <th>
+                <a asp-route-sortOrder="@(Model.SortOrder == "description_asc" ? "description_desc" : "description_asc")"
+                   asp-route-searchString="@Model.SearchString">
+                    Description
+                </a>
+            </th>
+            <th>
+                <a asp-route-sortOrder="@(Model.SortOrder == "start_asc" ? "start_desc" : "start_asc")"
+                   asp-route-searchString="@Model.SearchString">
+                    Start Time
+                </a>
+            </th>
+            <th>
+                <a asp-route-sortOrder="@(Model.SortOrder == "end_asc" ? "end_desc" : "end_asc")"
+                   asp-route-searchString="@Model.SearchString">
+                    End Time
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var worklog in Model.Worklogs)
+        {
+            <tr>
+                <td>@worklog.User.FullName</td>
+                <td>@worklog.TaskName</td>
+                <td>@worklog.Description</td>
+                <td>@worklog.StartTime</td>
+                <td>@worklog.EndTime</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,26 +1,36 @@
 using FunnyWebRazor.Data;
 using FunnyWebRazor.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FunnyWebRazor.Pages.Users
 {
+    [BindProperties]
     public class EditModel : PageModel
     {
-        private readonly ApplicationDBContext _context;
+        private readonly ApplicationDBContext _db;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
 
-        public EditModel(ApplicationDBContext context)
+        public User User { get; set; }
+        public string? Password { get; set; }
+
+        public EditModel(ApplicationDBContext db, UserManager<User> userManager, SignInManager<User> signInManager)
         {
-            _context = context;
+            _db = db;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        [BindProperty]
-        public User User { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(int id)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
-            User = await _context.Users.FindAsync(id);
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            User = await _userManager.FindByIdAsync(id);
             if (User == null)
             {
                 return NotFound();
@@ -29,27 +39,51 @@ namespace FunnyWebRazor.Pages.Users
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string id)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return Page();
+                var user = await _userManager.FindByIdAsync(id);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                user.FullName = User.FullName;
+                user.Email = User.Email;
+
+                if (!string.IsNullOrEmpty(Password))
+                {
+                    var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                    var passwordChangeResult = await _userManager.ResetPasswordAsync(user, token, Password);
+
+                    if (!passwordChangeResult.Succeeded)
+                    {
+                        foreach (var error in passwordChangeResult.Errors)
+                        {
+                            ModelState.AddModelError(string.Empty, error.Description);
+                        }
+                        return Page();
+                    }
+                }
+
+                var updateResult = await _userManager.UpdateAsync(user);
+                if (updateResult.Succeeded)
+                {
+                    return RedirectToPage("/Users/Index");
+                }
+                else
+                {
+                    foreach (var error in updateResult.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return Page();
+                }
             }
 
-            var userToUpdate = await _context.Users.FindAsync(User.Id);
-
-            if (userToUpdate == null)
-            {
-                return NotFound();
-            }
-
-            // Aktualizacja w³aœciwoœci u¿ytkownika
-            userToUpdate.FullName = User.FullName;
-            userToUpdate.Email = User.Email;
-            userToUpdate.Role = User.Role;
-
-            await _context.SaveChangesAsync();
-            return RedirectToPage("./Index");
+            return Page();
         }
+
     }
 }

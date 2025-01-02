@@ -1,0 +1,48 @@
+﻿@page
+@model FunnyWebRazor.Pages.LogWork.CreateModelLogWork
+@{
+    ViewData["Title"] = "Add New Worklog";
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Add New Worklog</h2>
+        </div>
+
+        <div asp-validation-summary="All"></div>
+
+        <div class="mb-3">
+            <label asp-for="Worklog.UserId">User ID</label>
+            <input asp-for="Worklog.UserId" type="text" class="form-control" />
+            <span asp-validation-for="Worklog.UserId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Worklog.TaskName">Task Name</label>
+            <input asp-for="Worklog.TaskName" type="text" class="form-control" />
+            <span asp-validation-for="Worklog.TaskName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Worklog.Description">Description</label>
+            <textarea asp-for="Worklog.Description" class="form-control"></textarea>
+            <span asp-validation-for="Worklog.Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Worklog.StartTime">Start Time</label>
+            <input asp-for="Worklog.StartTime" type="datetime-local" class="form-control" />
+            <span asp-validation-for="Worklog.StartTime" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Worklog.EndTime">End Time</label>
+            <input asp-for="Worklog.EndTime" type="datetime-local" class="form-control" />
+            <span asp-validation-for="Worklog.EndTime" class="text-danger"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+</form>
