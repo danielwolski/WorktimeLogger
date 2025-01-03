@@ -32,14 +32,11 @@ using (var scope = app.Services.CreateScope())
         }
     }
 
-    Console.WriteLine("Attempting to create admin@example.com");
     if (!context.Users.Any())
     {
-        Console.WriteLine("create admin@example.com");
-
         var user1 = new User
         {
-            UserName = "admin@example.com",
+            UserName = "admin",
             Email = "admin@example.com",
             FullName = "Admin User"
         };
@@ -51,11 +48,11 @@ using (var scope = app.Services.CreateScope())
 
         var user2 = new User
         {
-            UserName = "user@example.com",
+            UserName = "user",
             Email = "user@example.com",
             FullName = "Regular User"
         };
-        result = await userManager.CreateAsync(user2, "Bbb222@");
+        result = await userManager.CreateAsync(user2, "Aaa111@");
         if (result.Succeeded)
         {
             await userManager.AddToRoleAsync(user2, "User");

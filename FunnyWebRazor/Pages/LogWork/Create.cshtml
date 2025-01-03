@@ -10,14 +10,6 @@
             <h2 class="text-primary">Add New Worklog</h2>
         </div>
 
-        <div asp-validation-summary="All"></div>
-
-        <div class="mb-3">
-            <label asp-for="Worklog.UserId">User ID</label>
-            <input asp-for="Worklog.UserId" type="text" class="form-control" />
-            <span asp-validation-for="Worklog.UserId" class="text-danger"></span>
-        </div>
-
         <div class="mb-3">
             <label asp-for="Worklog.TaskName">Task Name</label>
             <input asp-for="Worklog.TaskName" type="text" class="form-control" />
@@ -46,3 +38,4 @@
     <button type="submit" class="btn btn-primary">Create</button>
     <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
 </form>
+
