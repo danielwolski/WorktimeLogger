@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FunnyWebRazor.Pages.Users
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly UserManager<User> _userManager;
