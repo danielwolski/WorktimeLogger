@@ -1,10 +1,10 @@
-using FunnyWebRazor.Models;
+using WorktimeLogger.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace FunnyWebRazor.Pages.Users
+namespace WorktimeLogger.Pages.Users
 {
     [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel

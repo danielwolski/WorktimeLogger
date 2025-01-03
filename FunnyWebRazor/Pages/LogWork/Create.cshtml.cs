@@ -1,10 +1,10 @@
-using FunnyWebRazor.Data;
-using FunnyWebRazor.Models;
+using WorktimeLogger.Data;
+using WorktimeLogger.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Identity;
 
-namespace FunnyWebRazor.Pages.LogWork
+namespace WorktimeLogger.Pages.LogWork
 {
     [BindProperties]
     public class CreateModelLogWork : PageModel

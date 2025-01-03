@@ -1,11 +1,11 @@
-using FunnyWebRazor.Data;
-using FunnyWebRazor.Models;
+using WorktimeLogger.Data;
+using WorktimeLogger.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 
-namespace FunnyWebRazor.Pages.LogWork
+namespace WorktimeLogger.Pages.LogWork
 {
     [Authorize(Roles = "User")]
     public class IndexModelLogWork : PageModel

@@ -1,4 +1,4 @@
-﻿namespace FunnyWebRazor.Models
+﻿namespace WorktimeLogger.Models
 {
     public class Worklog
     {

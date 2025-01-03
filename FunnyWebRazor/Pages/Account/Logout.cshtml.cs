@@ -1,8 +1,8 @@
-﻿using FunnyWebRazor.Models;
+﻿using WorktimeLogger.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace FunnyWebRazor.Pages.Account
+namespace WorktimeLogger.Pages.Account
 {
     public class LogoutModel : PageModel
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace FunnyWebRazor.Models
+namespace WorktimeLogger.Models
 {
     public class User : IdentityUser
     {

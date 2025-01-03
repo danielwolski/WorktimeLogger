@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace FunnyWebRazor.Pages
+namespace WorktimeLogger.Pages
 {
     public class IndexModel : PageModel
     {

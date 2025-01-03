@@ -1,5 +1,5 @@
-using FunnyWebRazor.Data;
-using FunnyWebRazor.Models;
+using WorktimeLogger.Data;
+using WorktimeLogger.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

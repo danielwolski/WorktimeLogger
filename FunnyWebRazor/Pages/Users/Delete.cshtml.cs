@@ -1,10 +1,10 @@
-using FunnyWebRazor.Data;
-using FunnyWebRazor.Models;
+using WorktimeLogger.Data;
+using WorktimeLogger.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace FunnyWebRazor.Pages.Users
+namespace WorktimeLogger.Pages.Users
 {
     public class DeleteModel : PageModel
     {
