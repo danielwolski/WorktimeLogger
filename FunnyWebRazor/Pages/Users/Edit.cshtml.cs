@@ -52,6 +52,19 @@ namespace FunnyWebRazor.Pages.Users
                 user.FullName = User.FullName;
                 user.Email = User.Email;
 
+                if (!string.IsNullOrEmpty(User.UserName) && user.UserName != User.UserName)
+                {
+                    var existingUser = await _userManager.FindByNameAsync(User.UserName);
+                    if (existingUser != null && existingUser.Id != user.Id)
+                    {
+                        ModelState.AddModelError(string.Empty, "UserName is already taken.");
+                        return Page();
+                    }
+
+                    user.UserName = User.UserName;
+                    user.NormalizedUserName = User.UserName.ToUpper();
+                }
+
                 if (!string.IsNullOrEmpty(Password))
                 {
                     var token = await _userManager.GeneratePasswordResetTokenAsync(user);
@@ -84,6 +97,5 @@ namespace FunnyWebRazor.Pages.Users
 
             return Page();
         }
-
     }
 }

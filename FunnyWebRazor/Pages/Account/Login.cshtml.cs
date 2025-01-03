@@ -23,7 +23,6 @@ namespace FunnyWebRazor.Pages.Account
         {
             public string Email { get; set; }
             public string Password { get; set; }
-            public bool RememberMe { get; set; }
         }
 
         public void OnGet(string returnUrl = null)
@@ -35,7 +34,7 @@ namespace FunnyWebRazor.Pages.Account
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {

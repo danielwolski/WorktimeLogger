@@ -30,7 +30,7 @@ namespace FunnyWebRazor.Pages.Users
             {
                 var user = new User
                 {
-                    UserName = User.Email,
+                    UserName = User.UserName,
                     Email = User.Email,
                     FullName = User.FullName
                 };
