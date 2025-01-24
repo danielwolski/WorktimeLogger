@@ -57,7 +57,7 @@ namespace WorktimeLogger.Pages.Users
                     var existingUser = await _userManager.FindByNameAsync(User.UserName);
                     if (existingUser != null && existingUser.Id != user.Id)
                     {
-                        ModelState.AddModelError(string.Empty, "UserName is already taken.");
+                        ModelState.AddModelError(string.Empty, "Username is already taken.");
                         return Page();
                     }
 

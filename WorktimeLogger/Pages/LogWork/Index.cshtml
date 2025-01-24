@@ -51,6 +51,7 @@
                     End Time
                 </a>
             </th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -62,6 +63,11 @@
                 <td>@worklog.Description</td>
                 <td>@worklog.StartTime</td>
                 <td>@worklog.EndTime</td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@worklog.Id" class="d-inline">
+                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>

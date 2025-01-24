@@ -21,7 +21,7 @@ namespace WorktimeLogger.Pages.Account
 
         public class InputModel
         {
-            public string Email { get; set; }
+            public string UserName { get; set; }
             public string Password { get; set; }
         }
 
@@ -34,7 +34,7 @@ namespace WorktimeLogger.Pages.Account
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(Input.UserName, Input.Password, false, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {

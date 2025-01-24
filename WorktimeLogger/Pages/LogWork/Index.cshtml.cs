@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WorktimeLogger.Pages.LogWork
 {
@@ -62,6 +63,18 @@ namespace WorktimeLogger.Pages.LogWork
 
                 Worklogs = await worklogsQuery.ToListAsync();
             }
+        }
+
+        public IActionResult OnPostDelete(int id)
+        {
+            var worklog = _context.Worklogs.Find(id);
+            if (worklog != null)
+            {
+                _context.Worklogs.Remove(worklog);
+                _context.SaveChanges();
+            }
+
+            return RedirectToPage();
         }
     }
 }
